@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="hello">Hello World, Click Me!</string>
-	<string name="app_name">CityApp.Android</string>
+	<string name="app_name">КЗ City</string>
+  <string name="activity_title_transport">Транспорт</string>
+  <string name="activity_title_taxi">Такси</string>
 </resources>
