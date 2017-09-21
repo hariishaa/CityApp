@@ -10,10 +10,10 @@
         android:id="@+id/taxiButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/activity_title_taxi" />
+        android:text="@string/title_taxi" />-->
     <Button
         android:id="@+id/transportButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/activity_title_transport" />-->
+        android:text="@string/title_transport_master" />
 </LinearLayout>

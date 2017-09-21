@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dense_two_line_list_item_height"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/side_padding"
+    android:paddingRight="@dimen/side_padding">
+
+  <TextView
+    android:id="@+id/routeNumTextView"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_marginEnd="@dimen/side_padding"
+    android:layout_weight="1"
+    android:gravity="center"
+    android:text="442"
+    android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+  <RelativeLayout
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="5"
+      android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/fromCityTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Краснознаменск"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+    <TextView
+        android:id="@+id/fromStationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/fromCityTextView"
+        android:layout_marginStart="@dimen/space_margin"
+        android:text="(Госпиталь)"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    <TextView
+        android:id="@+id/toCityTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fromCityTextView"
+        android:text="Москва"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+    <TextView
+        android:id="@+id/toStationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fromCityTextView"
+        android:layout_toEndOf="@+id/toCityTextView"
+        android:layout_marginStart="@dimen/space_margin"
+        android:text="(Парк Победы)"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    <!--<TextView
+        android:id="@+id/remarkTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toCityTextView"
+        android:text="Через Минское шоссе"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption" />-->
+  </RelativeLayout>
+  
+</LinearLayout>
