@@ -4,4 +4,5 @@
   <string name="title_taxi">Такси</string>
   <string name="title_transport_master">Транспорт</string>
   <string name="title_transport_detail">Расписание</string>
+  <string name="title_org_master">Организации</string>
 </resources>

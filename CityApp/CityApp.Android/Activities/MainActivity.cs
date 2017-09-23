@@ -24,6 +24,12 @@ namespace CityApp.Droid.Activities
                 var intent = new Intent(this, typeof(TransportMasterActivity));
                 StartActivity(intent);
             };
+            Button orgButton = FindViewById<Button>(Resource.Id.orgButton);
+            orgButton.Click += delegate
+            {
+                var intent = new Intent(this, typeof(OrgMasterActivity));
+                StartActivity(intent);
+            };
 
             //Button taxiButton = FindViewById<Button>(Resource.Id.taxiButton);
             //taxiButton.Click += delegate {

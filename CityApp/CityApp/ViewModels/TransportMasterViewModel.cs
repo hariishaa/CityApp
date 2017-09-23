@@ -21,7 +21,14 @@ namespace CityApp.ViewModels
             try
             {
                 AllRoutes = await WebService.MakeApiRequest<List<Route>>(method);
-                EmptyListText = Properties.Strings.EmptyListString;
+                if (AllRoutes.Count == 0)
+                {
+                    EmptyListText = Properties.Strings.EmptyListString;
+                }
+                else
+                {
+                    EmptyListText = string.Empty;
+                }
             }
             catch (Exception ex)
             {

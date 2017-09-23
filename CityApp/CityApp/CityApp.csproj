@@ -34,6 +34,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Helpers\WebService.cs" />
+    <Compile Include="Models\Org\Category.cs" />
+    <Compile Include="Models\Org\Subcategory.cs" />
     <Compile Include="Models\Transport\Line.cs" />
     <Compile Include="Models\Transport\Route.cs" />
     <Compile Include="Models\Transport\Timetable.cs" />
@@ -43,6 +45,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\OrgMasterViewModel.cs" />
     <Compile Include="ViewModels\TransportDetailViewModel.cs" />
     <Compile Include="ViewModels\TransportMasterViewModel.cs" />
   </ItemGroup>
