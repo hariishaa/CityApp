@@ -4,4 +4,5 @@
   <dimen name="side_padding">16dp</dimen>
   <dimen name="space_margin">4dp</dimen>
   <dimen name="dense_two_line_list_item_height">60dp</dimen>
+  <dimen name="dense_three_line_list_item_height">76dp</dimen>
 </resources>

@@ -103,10 +103,12 @@
   <ItemGroup>
     <Compile Include="Activities\ActivityBase.cs" />
     <Compile Include="Activities\MainActivity.cs" />
+    <Compile Include="Activities\OrgListActivity.cs" />
     <Compile Include="Activities\OrgMasterActivity.cs" />
     <Compile Include="Activities\TransportDetailActivity.cs" />
     <Compile Include="Activities\TransportMasterActivity.cs" />
     <Compile Include="Adapters\OrgCategoriesExpListViewAdapter.cs" />
+    <Compile Include="Adapters\OrgListViewAdapter.cs" />
     <Compile Include="Adapters\TransportRoutesListViewAdapter.cs" />
     <Compile Include="Adapters\TransportTimetablesListViewAdapter.cs" />
     <Compile Include="Adapters\TransportDetailViewPagerAdapter.cs" />
@@ -141,6 +143,12 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\list_item_org_categories.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\activity_org_list.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\list_item_org_list.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

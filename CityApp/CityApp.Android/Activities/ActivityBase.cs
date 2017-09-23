@@ -31,6 +31,21 @@ namespace CityApp.Droid.Activities
             }
         }
 
+        public void SetLayout(int layoutResId, string title, bool backNavigationEnabled = true)
+        {
+            Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
+
+            SetContentView(layoutResId);
+            var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+            if (toolbar != null)
+            {
+                SetSupportActionBar(toolbar);
+                SupportActionBar.Title = title;
+                SupportActionBar.SetDisplayHomeAsUpEnabled(backNavigationEnabled);
+                SupportActionBar.SetHomeButtonEnabled(backNavigationEnabled);
+            }
+        }
+
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             if (item.ItemId == Android.Resource.Id.Home)

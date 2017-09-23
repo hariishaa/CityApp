@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dense_two_line_list_item_height"
+    android:orientation="vertical"
+    android:paddingEnd="@dimen/side_padding"
+    android:paddingStart="@dimen/side_padding">
+
+  <TextView
+      android:id="@+id/orgNameTextView"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1"
+      android:gravity="bottom"
+      android:text="Московский Кредитный Банк, банкомат"
+      android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+  <TextView
+      android:id="@+id/orgAddressTextView"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1"
+      android:gravity="top"
+      android:text="Краснознаменск, Краснознаменная улица, 2"
+      android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+</LinearLayout>

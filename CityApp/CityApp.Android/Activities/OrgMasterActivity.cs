@@ -18,8 +18,6 @@ namespace CityApp.Droid.Activities
     public class OrgMasterActivity : ActivityBase
     {
         OrgMasterViewModel vm = new OrgMasterViewModel();
-        //List<string> categories = new List<string>();
-        //Dictionary<string, List<string>> subcategories = new Dictionary<string, List<string>>();
         ExpandableListView orgCategoriesExpListView;
 
         protected override async void OnCreate(Bundle savedInstanceState)
@@ -45,7 +43,11 @@ namespace CityApp.Droid.Activities
 
         private void OrgCategoriesExpListView_ChildClick(object sender, ExpandableListView.ChildClickEventArgs e)
         {
-
+            var intent = new Intent(this, typeof(OrgListActivity));
+            intent.PutExtra("cat_id", vm.Categories[e.GroupPosition].id);
+            intent.PutExtra("subcat_id", vm.Categories[e.GroupPosition].subcategories[e.ChildPosition].id);
+            intent.PutExtra("title", vm.Categories[e.GroupPosition].subcategories[e.ChildPosition].name);
+            StartActivity(intent);
         }
 
         private void OrgCategoriesExpListView_GroupClick(object sender, ExpandableListView.GroupClickEventArgs e)
@@ -63,7 +65,10 @@ namespace CityApp.Droid.Activities
             }
             else
             {
-
+                var intent = new Intent(this, typeof(OrgListActivity));
+                intent.PutExtra("cat_id", vm.Categories[e.GroupPosition].id);
+                intent.PutExtra("title", vm.Categories[e.GroupPosition].name);
+                StartActivity(intent);
             }
         }
     }
