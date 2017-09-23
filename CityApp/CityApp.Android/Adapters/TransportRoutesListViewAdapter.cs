@@ -30,16 +30,16 @@ namespace CityApp.Droid.Adapters
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
             Route route = routes.ElementAt(position);
-            ViewHolder viewHolder;
+            TransportRoutesViewHolder viewHolder;
             if (convertView == null)
             {
                 convertView = inflater.Inflate(layout, parent, false);
-                viewHolder = new ViewHolder(convertView);
+                viewHolder = new TransportRoutesViewHolder(convertView);
                 convertView.Tag = viewHolder;
             }
             else
             {
-                viewHolder = (ViewHolder)convertView.Tag;
+                viewHolder = (TransportRoutesViewHolder)convertView.Tag;
             }
             viewHolder.RouteNumTextView.Text = route.route_num;
             viewHolder.FromCityTextView.Text = route.city_from_name;
@@ -59,7 +59,7 @@ namespace CityApp.Droid.Adapters
         }
     }
 
-    public class ViewHolder : Java.Lang.Object
+    public class TransportRoutesViewHolder : Java.Lang.Object
     {
         public TextView RouteNumTextView { get; private set; }
         public TextView FromCityTextView { get; private set; }
@@ -68,7 +68,7 @@ namespace CityApp.Droid.Adapters
         public TextView ToStationTextView { get; private set; }
         //public TextView RemarkTextView { get; private set; }
 
-        public ViewHolder(View view)
+        public TransportRoutesViewHolder(View view)
         {
             RouteNumTextView = view.FindViewById<TextView>(Resource.Id.routeNumTextView);
             FromCityTextView = view.FindViewById<TextView>(Resource.Id.fromCityTextView);

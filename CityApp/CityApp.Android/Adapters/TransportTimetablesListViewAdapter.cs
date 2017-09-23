@@ -31,16 +31,16 @@ namespace CityApp.DroId.Adapters
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
             Timetable timetable = timetables.ElementAt(position);
-            ViewHolder viewHolder;
+            TransportTimetablesViewHolder viewHolder;
             if (convertView == null)
             {
                 convertView = inflater.Inflate(layout, parent, false);
-                viewHolder = new ViewHolder(convertView);
+                viewHolder = new TransportTimetablesViewHolder(convertView);
                 convertView.Tag = viewHolder;
             }
             else
             {
-                viewHolder = (ViewHolder)convertView.Tag;
+                viewHolder = (TransportTimetablesViewHolder)convertView.Tag;
             }
             viewHolder.TimeTextView.Text = timetable.hour + ":" + timetable.minutes;
             viewHolder.FromCityTextView.Text = timetable.city_from_name;
@@ -60,7 +60,7 @@ namespace CityApp.DroId.Adapters
         }
     }
 
-    public class ViewHolder : Java.Lang.Object
+    public class TransportTimetablesViewHolder : Java.Lang.Object
     {
         public TextView TimeTextView { get; private set; }
         public TextView FromCityTextView { get; private set; }
@@ -69,7 +69,7 @@ namespace CityApp.DroId.Adapters
         public TextView ToStationTextView { get; private set; }
         public TextView RemarkTextView { get; private set; }
 
-        public ViewHolder(View view)
+        public TransportTimetablesViewHolder(View view)
         {
             TimeTextView = view.FindViewById<TextView>(Resource.Id.timeTextView);
             FromCityTextView = view.FindViewById<TextView>(Resource.Id.fromCityTextView);
