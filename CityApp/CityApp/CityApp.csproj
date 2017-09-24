@@ -46,6 +46,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\OrgDetailViewModel.cs" />
     <Compile Include="ViewModels\OrgListViewModel.cs" />
     <Compile Include="ViewModels\OrgMasterViewModel.cs" />
     <Compile Include="ViewModels\TransportDetailViewModel.cs" />

@@ -39,18 +39,17 @@ namespace CityApp.Droid.Activities
                 var listView = FindViewById<ListView>(Resource.Id.orgListView);
                 listView.Adapter = new OrgListViewAdapter(this,
                     Resource.Layout.list_item_org_list, vm.Organizations);
-                //listView.ItemClick += (s, e) =>
-                //{
-                //    var route = vm.AllRoutes[e.Position];
-                //    var intent = new Intent(this, typeof(TransportDetailActivity));
-                //    intent.PutExtra("routeNum", route.route_num);
-                //    intent.PutExtra("routeId", route.route_id);
-                //    intent.PutExtra("cityFromName", route.city_from_name);
-                //    intent.PutExtra("stationFromName", route.station_from_name);
-                //    intent.PutExtra("cityToName", route.city_to_name);
-                //    intent.PutExtra("stationToName", route.station_to_name);
-                //    StartActivity(intent);
-                //};
+                listView.ItemClick += (s, e) =>
+                {
+                    var org = vm.Organizations[e.Position];
+                    var intent = new Intent(this, typeof(OrgDetailActivity));
+                    intent.PutExtra("orgName", org.name);
+                    intent.PutExtra("orgAddress", $"{org.city}, {org.street}, {org.building_num}");
+                    intent.PutExtra("orgLon", org.lon);
+                    intent.PutExtra("orgLat", org.lat);
+                    intent.PutExtra("orgDesc", org.description);
+                    StartActivity(intent);
+                };
             }
             progressBar.Visibility = ViewStates.Gone;
         }

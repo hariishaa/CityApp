@@ -31,5 +31,25 @@ namespace CityApp.Helpers
                 return obj;
             }
         }
+
+        public static async Task<byte[]> MakeUrlBytesRequest(string url, Dictionary<string, string> parameters = null)
+        {
+            url += "?";
+            // todo: попробовать упростить способ построения url с параметрами
+            if (parameters != null)
+            {
+                foreach (var param in parameters)
+                {
+                    url += $"{param.Key}={param.Value}&";
+                }
+            }
+            using (var client = new HttpClient())
+            {
+                var response = await client.GetAsync(url);
+                response.EnsureSuccessStatusCode();
+                var bytes = await response.Content.ReadAsByteArrayAsync();
+                return bytes;
+            }
+        }
     }
 }
