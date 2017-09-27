@@ -5,4 +5,5 @@
   <string name="title_transport_master">Транспорт</string>
   <string name="title_transport_detail">Расписание</string>
   <string name="title_org_master">Организации</string>
+  <string name="title_television">Новости</string>
 </resources>

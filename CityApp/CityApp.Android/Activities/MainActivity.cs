@@ -30,7 +30,12 @@ namespace CityApp.Droid.Activities
                 var intent = new Intent(this, typeof(OrgMasterActivity));
                 StartActivity(intent);
             };
-
+            Button televisionButton = FindViewById<Button>(Resource.Id.televisionButton);
+            televisionButton.Click += delegate
+            {
+                var intent = new Intent(this, typeof(TelevisionActivity));
+                StartActivity(intent);
+            };
             //Button taxiButton = FindViewById<Button>(Resource.Id.taxiButton);
             //taxiButton.Click += delegate {
             //    var intent = new Intent(this, typeof(TaxiActivity));

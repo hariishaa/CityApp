@@ -21,4 +21,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/title_org_master" />
+  <Button
+        android:id="@+id/televisionButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_television" />
 </LinearLayout>

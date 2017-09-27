@@ -37,6 +37,7 @@
     <Compile Include="Models\Org\Category.cs" />
     <Compile Include="Models\Org\OrgCard.cs" />
     <Compile Include="Models\Org\Subcategory.cs" />
+    <Compile Include="Models\Television\YoutubeItem.cs" />
     <Compile Include="Models\Transport\Line.cs" />
     <Compile Include="Models\Transport\Route.cs" />
     <Compile Include="Models\Transport\Timetable.cs" />
@@ -49,6 +50,7 @@
     <Compile Include="ViewModels\OrgDetailViewModel.cs" />
     <Compile Include="ViewModels\OrgListViewModel.cs" />
     <Compile Include="ViewModels\OrgMasterViewModel.cs" />
+    <Compile Include="ViewModels\TelevisionViewModel.cs" />
     <Compile Include="ViewModels\TransportDetailViewModel.cs" />
     <Compile Include="ViewModels\TransportMasterViewModel.cs" />
   </ItemGroup>
