@@ -15,7 +15,7 @@ namespace CityApp.Helpers
         {
             var baseUrl = "http://46.101.183.135/api/";
             // todo: попробовать упростить способ построения url с параметрами
-            var url = MakeUrl(baseUrl + method + "?", parameters);
+            var url = MakeUrl(baseUrl + method, parameters);
             using (var client = new HttpClient())
             {
                 var response = await client.GetAsync(url);
