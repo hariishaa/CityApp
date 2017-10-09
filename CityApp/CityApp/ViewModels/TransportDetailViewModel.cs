@@ -45,7 +45,7 @@ namespace CityApp.ViewModels
             try
             {
                 Timetables = await WebService.MakeApiRequest<List<Timetable>>(method, parameters);
-                EmptyListText = Properties.Strings.EmptyListString;
+                EmptyListText = "Расписание отсутствует";
             }
             catch (Exception ex)
             {

@@ -25,7 +25,7 @@ namespace CityApp.ViewModels
             {
                 ["l"] = "map",
                 ["ll"] = $"{lon},{lat}",
-                ["zoom"] = "18",
+                ["zoom"] = "17",
                 ["pt"] = $"{lon},{lat},org",
                 ["size"] = "610,450"
             };
@@ -33,7 +33,7 @@ namespace CityApp.ViewModels
             {
                 BytesStaticMap = await WebService.MakeUrlBytesRequest(url, parameters);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 BytesStaticMap = null;
             }

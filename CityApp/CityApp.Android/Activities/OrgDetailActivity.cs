@@ -12,6 +12,8 @@ using Android.Widget;
 using System.Threading.Tasks;
 using CityApp.ViewModels;
 using Android.Graphics;
+using Android.Support.CustomTabs;
+using Android.Support.V4.Content;
 
 namespace CityApp.Droid.Activities
 {
@@ -28,6 +30,8 @@ namespace CityApp.Droid.Activities
             var orgAddress = Intent.GetStringExtra("orgAddress");
             var orgLon = Intent.GetStringExtra("orgLon");
             var orgLat = Intent.GetStringExtra("orgLat");
+            var orgPhone = Intent.GetStringExtra("orgPhone");
+            var orgUrl = Intent.GetStringExtra("orgUrl");
             var orgDesc = Intent.GetStringExtra("orgDesc");
 
             SetLayout(Resource.Layout.activity_org_detail, "", true); // change title
@@ -45,9 +49,60 @@ namespace CityApp.Droid.Activities
                 mapImageView.SetImageBitmap(imageToShow);
             }
             var orgTextView = FindViewById<TextView>(Resource.Id.orgNameTextView);
+            var orgAddressTableRow = FindViewById<TableRow>(Resource.Id.orgAddressTableRow);
             var orgAddressTextView = FindViewById<TextView>(Resource.Id.orgAddressTextView);
             orgTextView.Text = orgName;
+            orgAddressTableRow.Click += (s, e) =>
+            {
+                var mapIntent = new Intent(Intent.ActionView, Android.Net.Uri.Parse($"geo:{orgLat},{orgLon}"));
+                try
+                {
+                    StartActivity(mapIntent);
+                }
+                catch (ActivityNotFoundException)
+                {
+                    Toast.MakeText(this, "На устройстве не установлено приложение для отображения карт", ToastLength.Long)
+                    .Show();
+                }
+            };
             orgAddressTextView.Text = orgAddress;
+            if (!string.IsNullOrEmpty(orgPhone))
+            {
+                var orgPhoneTextView = FindViewById<TextView>(Resource.Id.orgPhoneTextView);
+                var orgPhoneTableRow = FindViewById<TableRow>(Resource.Id.orgPhoneTableRow);
+                orgPhoneTextView.Text = "+7 (" + orgPhone.Substring(1, 3) + ") " + orgPhone.Substring(4, 3) +
+                    "-" + orgPhone.Substring(7, 2) + "-" + orgPhone.Substring(9, 2);
+                orgPhoneTableRow.Click += (s, e) =>
+                {
+                    var dialerIntent = new Intent(Intent.ActionDial, Android.Net.Uri.Parse($"tel:+{orgPhone}"));
+                    StartActivity(dialerIntent);
+                };
+                orgPhoneTableRow.Visibility = ViewStates.Visible;
+            }
+            if (!string.IsNullOrEmpty(orgUrl))
+            {
+                var orgUrlTextView = FindViewById<TextView>(Resource.Id.orgUrlTextView);
+                var orgUrlTableRow = FindViewById<TableRow>(Resource.Id.orgUrlTableRow);
+                orgUrlTextView.Text = orgUrl;
+                orgUrlTableRow.Click += (s, e) =>
+                {
+                    var builder = new CustomTabsIntent.Builder()
+                    .SetToolbarColor(ContextCompat.GetColor(this, Resource.Color.colorPrimary))
+                    .SetShowTitle(true);
+                    var intent = builder.Build();
+                    var mgr = new CustomTabsActivityManager(this);
+                    mgr.CustomTabsServiceConnected += delegate {
+                        mgr.LaunchUrl(orgUrl, intent);
+                    };
+                    mgr.BindService();
+                    if (!mgr.BindService())
+                    {
+                        var webIntent = new Intent(Intent.ActionView, Android.Net.Uri.Parse(orgUrl));
+                        StartActivity(webIntent);
+                    }
+                };
+                orgUrlTableRow.Visibility = ViewStates.Visible;
+            }
             if (!string.IsNullOrEmpty(orgDesc))
             {
                 var orgDescriptionTextView = FindViewById<TextView>(Resource.Id.orgDescriptionTextView);

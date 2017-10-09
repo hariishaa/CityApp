@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/dense_two_line_list_item_height"
+    android:layout_height="wrap_content"
+    android:minHeight="@dimen/dense_two_line_list_item_height"
     android:orientation="vertical"
     android:paddingEnd="@dimen/side_padding"
-    android:paddingStart="@dimen/side_padding">
-
+    android:paddingStart="@dimen/side_padding"
+    android:paddingBottom="@dimen/space_margin"
+    android:paddingTop="@dimen/space_margin">
   <TextView
       android:id="@+id/orgNameTextView"
       android:layout_width="match_parent"
@@ -14,7 +16,6 @@
       android:gravity="bottom"
       android:text="Московский Кредитный Банк, банкомат"
       android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
-
   <TextView
       android:id="@+id/orgAddressTextView"
       android:layout_width="match_parent"

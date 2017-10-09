@@ -33,7 +33,8 @@
         android:id="@+id/fromStationTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/fromCityTextView"
+        android:layout_toEndOf="@id/fromCityTextView"
+        android:layout_toRightOf="@id/fromCityTextView"
         android:layout_marginStart="@dimen/space_margin"
         android:text="(Госпиталь)"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
@@ -42,7 +43,7 @@
         android:id="@+id/toCityTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/fromCityTextView"
+        android:layout_below="@id/fromCityTextView"
         android:text="Москва"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
@@ -50,8 +51,9 @@
         android:id="@+id/toStationTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/fromCityTextView"
-        android:layout_toEndOf="@+id/toCityTextView"
+        android:layout_below="@id/fromCityTextView"
+        android:layout_toEndOf="@id/toCityTextView"
+        android:layout_toRightOf="@id/toCityTextView"
         android:layout_marginStart="@dimen/space_margin"
         android:text="(Парк Победы)"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
@@ -60,9 +62,10 @@
         android:id="@+id/remarkTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toCityTextView"
+        android:layout_below="@id/toCityTextView"
         android:text="Через Минское шоссе"
-        android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:visibility="gone"/>
   </RelativeLayout>
 
 

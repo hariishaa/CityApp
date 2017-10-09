@@ -1,29 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar" />
-<!--<Button
-        android:id="@+id/taxiButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/title_taxi" />-->
-    <Button
-        android:id="@+id/transportButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/title_transport_master" />
+  <include
+      android:id="@+id/toolbar"
+      layout="@layout/toolbar" />
+  <!--<Button
+      android:id="@+id/transportButton"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/title_transport_master"
+      android:layout_below="@id/toolbar"/>
   <Button
         android:id="@+id/orgButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/title_org_master" />
+        android:text="@string/title_org_master"
+        android:layout_below="@id/transportButton"/>
   <Button
         android:id="@+id/televisionButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/title_television" />
-</LinearLayout>
+        android:text="@string/title_television" 
+        android:layout_below="@id/orgButton"/>-->
+  <FrameLayout
+    android:id="@+id/fragmentFrameLayout"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:layout_below="@id/toolbar"
+     android:layout_above="@+id/bot_nav_bar"/>
+  <android.support.design.widget.BottomNavigationView
+    android:id="@+id/bot_nav_bar"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/bot_nav_bar_height"
+    android:layout_gravity="start"
+    android:layout_alignParentBottom="true"
+    android:background="@color/colorPrimary"
+    app:elevation="@dimen/bot_nav_bar_elevation"
+    app:menu="@menu/menu_bot_nav_bar"
+    app:itemTextColor="@drawable/selector_bot_nav_bar"
+    app:itemIconTint="@drawable/selector_bot_nav_bar"/>
+</RelativeLayout>

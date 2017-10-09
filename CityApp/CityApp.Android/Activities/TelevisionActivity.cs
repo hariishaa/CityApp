@@ -32,10 +32,10 @@ namespace CityApp.Droid.Activities
             emptyTextView.Text = vm.EmptyListText;
             if (vm.YoutubeItems != null)
             {
-                var listView = FindViewById<ListView>(Resource.Id.televisionListView);
-                listView.Adapter = new TelevisionListViewAdapter(this,
+                var televisionListView = FindViewById<ListView>(Resource.Id.televisionListView);
+                televisionListView.Adapter = new TelevisionListViewAdapter(this,
                     Resource.Layout.list_item_television_list, vm.YoutubeItems);
-                listView.ItemClick += (s, e) =>
+                televisionListView.ItemClick += (s, e) =>
                 {
                     var youtubeItem = vm.YoutubeItems[e.Position];
                     var uri = Android.Net.Uri.Parse("https://www.youtube.com/watch?v=" + youtubeItem?.VideoId);

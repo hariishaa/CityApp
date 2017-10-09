@@ -19,6 +19,8 @@ namespace CityApp.Models.Org
         public int subcat_id { get; set; }
         public string lon { get; set; }
         public string lat { get; set; }
+        public string phone { get; set; }
+        public string url { get; set; }
         public string description { get; set; }
     }
 }

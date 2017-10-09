@@ -18,6 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_toEndOf="@id/videoPreviewImageView"
+        android:layout_toRightOf="@id/videoPreviewImageView"
         android:layout_alignBottom="@id/videoPreviewImageView"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
     <TextView
@@ -26,6 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_toEndOf="@id/videoPreviewImageView"
+        android:layout_toRightOf="@id/videoPreviewImageView"
         android:layout_above="@id/dateCaptionTextView"
         android:layout_alignParentTop="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"

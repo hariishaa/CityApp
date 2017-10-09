@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">КЗ City</string>
+	<string name="app_name">Краснознаменск City</string>
   <string name="title_taxi">Такси</string>
   <string name="title_transport_master">Транспорт</string>
   <string name="title_transport_detail">Расписание</string>

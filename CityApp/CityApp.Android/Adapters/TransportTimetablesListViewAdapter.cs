@@ -51,6 +51,7 @@ namespace CityApp.DroId.Adapters
             if (remark != null && remark != string.Empty)
             {
                 viewHolder.RemarkTextView.Text = remark;
+                viewHolder.RemarkTextView.Visibility = ViewStates.Visible;
             }
             else
             {

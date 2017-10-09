@@ -49,7 +49,15 @@ namespace CityApp.Droid.Activities
             var tabLayout = FindViewById<TabLayout>(Resource.Id.tabs);
             tabLayout.SetupWithViewPager(viewPager);
             tabLayout.TabSelected += TabLayout_TabSelected;
-            tabLayout.GetTabAt(vm.CurrentDayId).Select();
+            // костыль
+            if (vm.CurrentDayId != 0)
+            {
+                tabLayout.GetTabAt(vm.CurrentDayId).Select();
+            }
+            else
+            {
+                fragments[vm.CurrentDayId].SetTimetable(vm.CurrentDayId + 1);
+            }
         }
 
         private void TabLayout_TabSelected(object sender, TabLayout.TabSelectedEventArgs e)

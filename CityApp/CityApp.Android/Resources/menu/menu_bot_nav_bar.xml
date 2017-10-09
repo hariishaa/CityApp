@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:local="http://schemas.android.com/apk/res-auto">
+  <item
+       android:id="@+id/menu_item_transport"
+       android:icon="@drawable/ic_direction_bus_color_24d"
+       local:showAsAction="ifRoom"
+       android:title="@string/title_transport_master" />
+  <item
+       android:id="@+id/menu_item_orgs"
+       android:icon="@drawable/ic_store_color_24d"
+       local:showAsAction="ifRoom"
+       android:title="@string/title_org_master" />
+  <item
+       android:id="@+id/menu_item_news"
+       android:icon="@drawable/ic_newspaper_white_24dp"
+       local:showAsAction="ifRoom"
+       android:title="@string/title_television" />
+</menu>

@@ -47,6 +47,8 @@ namespace CityApp.Droid.Activities
                     intent.PutExtra("orgAddress", $"{org.city}, {org.street}, {org.building_num}");
                     intent.PutExtra("orgLon", org.lon);
                     intent.PutExtra("orgLat", org.lat);
+                    intent.PutExtra("orgPhone", org.phone);
+                    intent.PutExtra("orgUrl", org.url);
                     intent.PutExtra("orgDesc", org.description);
                     StartActivity(intent);
                 };

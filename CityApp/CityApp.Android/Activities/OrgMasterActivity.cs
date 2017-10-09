@@ -11,6 +11,8 @@ using Android.Views;
 using Android.Widget;
 using CityApp.Droid.Adapters;
 using CityApp.ViewModels;
+using Android.Support.Design.Widget;
+using CityApp.Droid.Fragments;
 
 namespace CityApp.Droid.Activities
 {

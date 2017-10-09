@@ -72,7 +72,6 @@ namespace CityApp.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to Что-то пошло не так :(
-        ///Проверьте подключение к сети
         ///Ошибка: .
         /// </summary>
         public static string ExceptionString {

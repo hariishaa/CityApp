@@ -2,16 +2,17 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-  <include
+  <!--<include
       android:id="@+id/toolbar"
-      layout="@layout/toolbar" />
+      layout="@layout/toolbar" />-->
   <!--indicator-->
+  <!-- android:layout_below="@id/toolbar" -->
   <ExpandableListView
       android:id="@+id/orgCategoriesExpListView"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:layout_below="@id/toolbar" 
-      android:groupIndicator="@drawable/group_indicator"/>
+      android:groupIndicator="@drawable/group_indicator"
+      android:scrollbars="none"/>
   <ProgressBar
       android:id="@+id/progressBar"
       android:layout_width="wrap_content"

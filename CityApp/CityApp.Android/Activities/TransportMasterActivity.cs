@@ -32,10 +32,10 @@ namespace CityApp.Droid.Activities
             emptyTextView.Text = vm.EmptyListText;
             if (vm.AllRoutes != null)
             {
-                var listView = FindViewById<ListView>(Resource.Id.routesListView);
-                listView.Adapter = new TransportRoutesListViewAdapter(this,
+                var routesListView = FindViewById<ListView>(Resource.Id.routesListView);
+                routesListView.Adapter = new TransportRoutesListViewAdapter(this,
                     Resource.Layout.list_item_transport_routes, vm.AllRoutes);
-                listView.ItemClick += (s, e) =>
+                routesListView.ItemClick += (s, e) =>
                 {
                     var route = vm.AllRoutes[e.Position];
                     var intent = new Intent(this, typeof(TransportDetailActivity));
